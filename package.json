@@ -1,14 +1,22 @@
 {
-  "name": "AliTRAZA-MEAN",
+  "name": "alitrazaMEAN",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xotoxjp/alitrazaMEAN.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xotoxjp/alitrazaMEAN/issues"
+  },
+  "homepage": "https://github.com/xotoxjp/alitrazaMEAN#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
