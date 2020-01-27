@@ -1,4 +1,5 @@
 const express = require ('express');
+const cors = require('cors');
 const app = express();
 const morgan = require('morgan');
 
@@ -9,16 +10,19 @@ const { mongoose } = require('./database');
 
 // settings
 app.set('port', process.env.PORT || 3000);
-// app.set('json spaces', 2);
+app.set('json spaces', 2);
 
 // middlewares
 app.use(morgan('dev'));
-//app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors({origin: 'http//localhost:4200'}));
 
 
 // routes
 app.use('/productores', require('./routes/productor.routes'));
+app.use('/salas', require('./routes/sala.routes'));
+app.use('/presupuestos', require('./routes/presupuesto.routes'));
+app.use('/muestras', require('./routes/muestra.routes'));
 
 
 // starting the server
