@@ -23,7 +23,9 @@ app.use('/productores', require('./routes/productor.routes'));
 app.use('/salas', require('./routes/sala.routes'));
 app.use('/presupuestos', require('./routes/presupuesto.routes'));
 app.use('/muestras', require('./routes/muestra.routes'));
-
+app.use('/laboratorios', require('./routes/laboratorio.routes'));
+app.use('/productos', require('./routes/producto.routes'));
+app.use('/analisis', require('./routes/analisis.routes'));
 
 // starting the server
 app.listen(app.get('port'), () => {

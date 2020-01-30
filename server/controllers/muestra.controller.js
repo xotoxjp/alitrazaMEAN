@@ -16,7 +16,7 @@ muestraCtrl.createMuestra = async (req, res) => {
 };
 
 muestraCtrl.getMuestra = async (req, res) =>{
-    const muestra = await Muestra.findById(req.params.id);
+    const muestra = await Muestra.findById(req.params.numero);
     res.json(muestra);
 };
 
@@ -31,6 +31,9 @@ muestraCtrl.editMuestra = async (req, res) =>{
         valorAcidez: req.body.valorAcidez,
         resultado: req.body.resultado,
         fechaAnalisis: req.body.fechaAnalisis,
+        analisis: req.body.analisis,
+        laboratorio: req.body.laboratorio,
+        productor: req.body.productor
     };
     await Muestra.findByIdAndUpdate(id, {$set: muestra}, {new: true});
     res.json({status: 'Muestra Updated'});

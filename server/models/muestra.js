@@ -10,6 +10,9 @@ const MuestraSchema = new Schema({
     valorAcidez: Number,
     resultado: String,
     fechaAnalisis: Date,
+    analisis: [{type: mongoose.Types.ObjectId, ref:'Analisis'}],
+    laboratorio: {type: mongoose.Types.ObjectId, ref: 'Laboratorio'},
+    producto: {type: mongoose.Types.ObjectId, ref:'Producto'}
 });
 
 module.exports = mongoose.model('Muestra', MuestraSchema);
